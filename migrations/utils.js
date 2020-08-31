@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-const jsonfile = require("jsonfile");
-const { scripts, ConfigVariablesInitializer } = require("zos");
+const jsonfile = require('jsonfile');
+const { scripts, ConfigManager } = require('@openzeppelin/cli');
 
 const { add, push, create, setAdmin } = scripts;
 const forceDeploy = true;
@@ -33,11 +33,11 @@ const makeUtils = async (artifacts, networkName, config, owner, deployer) => {
   const MoCConnector = artifacts.require("./base/MoCConnector.sol");
   const MoCLibMock = artifacts.require("./mocks/MoCHelperLibMock.sol");
   const { toContract } = require("../utils/numberHelper");
-
+  console.log('initNetworkConfiguration');
   const {
     network,
     txParams
-  } = await ConfigVariablesInitializer.initNetworkConfiguration({
+  } = await ConfigManager.initNetworkConfiguration({
     network: networkName,
     from: owner
   });

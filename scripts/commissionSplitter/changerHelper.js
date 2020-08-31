@@ -1,9 +1,8 @@
 const Web3 = require('web3');
-const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider);
 const abiDecoder = require('abi-decoder');
 const _ = require('lodash');
-const jsonfile = require('jsonfile');
-const { scripts, ConfigVariablesInitializer } = require('zos');
+const { scripts, ConfigManager } = require('@openzeppelin/cli');
 const truffleConfig = require('../../truffle');
 const config = require('./script-config.json');
 
@@ -52,7 +51,7 @@ const deployProxyContract = async ({ network, contractAlias, newAdmin }, constru
     Object.values(constructorArguments)
   );
 
-  const { txParams } = await ConfigVariablesInitializer.initNetworkConfiguration({
+  const { txParams } = await ConfigManager.initNetworkConfiguration({
     network,
     from: owner
   });

@@ -1,4 +1,4 @@
-const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 const mnemonic =
   process.env.MNEMONIC || 'lab direct float merit wall huge wheat loyal maple cup battle butter';

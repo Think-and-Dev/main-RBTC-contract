@@ -1,0 +1,969 @@
+{
+  "contracts": {
+    "MoCState": {
+      "address": "0x360064B7EdE980252E7e15b8FCB64B418643E04f",
+      "constructorCode": "608060405234801561001057600080fd5b50613ef1806100206000396000f3fe",
+      "bodyBytecodeHash": "2be3bc25c1f3615e91b1b139636a6d84e883f8bfcd4ef9b524eaac226eca418a",
+      "localBytecodeHash": "b3d9879bb52ddfe241cbbcff272400092fede3b2a10f5f2d7334e9795440a09f",
+      "deployedBytecodeHash": "6571ac7b9279960d4a64b56154861bed00d89d50e0f05aed5e2438162e536905",
+      "types": {
+        "t_struct<MoCHelperLib.MocLibConfig>": {
+          "id": "t_struct<MoCHelperLib.MocLibConfig>",
+          "kind": "struct",
+          "label": "MoCHelperLib.MocLibConfig",
+          "members": [
+            {
+              "label": "reservePrecision",
+              "astId": 4373,
+              "type": "t_uint256",
+              "src": "137:24:8"
+            },
+            {
+              "label": "dayPrecision",
+              "astId": 4375,
+              "type": "t_uint256",
+              "src": "167:20:8"
+            },
+            {
+              "label": "mocPrecision",
+              "astId": 4377,
+              "type": "t_uint256",
+              "src": "193:20:8"
+            }
+          ]
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_enum<MoCState.States>": {
+          "id": "t_enum<MoCState.States>",
+          "kind": "enum",
+          "label": "MoCState.States",
+          "members": [
+            "Liquidated",
+            "BProDiscount",
+            "BelowCobj",
+            "AboveCobj"
+          ]
+        }
+      },
+      "storage": [
+        {
+          "contract": "MoCLibConnection",
+          "path": "contracts/MoCLibConnection.sol",
+          "label": "mocLibConfig",
+          "astId": 6854,
+          "type": "t_struct<MoCHelperLib.MocLibConfig>",
+          "src": "179:47:10"
+        },
+        {
+          "contract": "MoCLibConnection",
+          "path": "contracts/MoCLibConnection.sol",
+          "label": "upgradeGap",
+          "astId": 6902,
+          "type": "t_array:50<t_uint256>",
+          "src": "888:30:10"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 14730,
+          "type": "t_bool",
+          "src": "757:24:75"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 14732,
+          "type": "t_bool",
+          "src": "876:25:75"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 14788,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:75"
+        },
+        {
+          "contract": "MoCBase",
+          "path": "contracts/base/MoCBase.sol",
+          "label": "connector",
+          "astId": 10258,
+          "type": "t_address",
+          "src": "251:29:15"
+        },
+        {
+          "contract": "MoCBase",
+          "path": "contracts/base/MoCBase.sol",
+          "label": "initialized",
+          "astId": 10260,
+          "type": "t_bool",
+          "src": "285:25:15"
+        },
+        {
+          "contract": "MoCBase",
+          "path": "contracts/base/MoCBase.sol",
+          "label": "upgradeGap",
+          "astId": 10292,
+          "type": "t_array:50<t_uint256>",
+          "src": "696:30:15"
+        },
+        {
+          "contract": "Governed",
+          "path": "moc-governance/contracts/Governance/Governed.sol",
+          "label": "governor",
+          "astId": 12722,
+          "type": "t_address",
+          "src": "549:25:55"
+        },
+        {
+          "contract": "Governed",
+          "path": "moc-governance/contracts/Governance/Governed.sol",
+          "label": "upgradeGap",
+          "astId": 12766,
+          "type": "t_array:50<t_uint256>",
+          "src": "1698:30:55"
+        },
+        {
+          "contract": "MoCEMACalculator",
+          "path": "contracts/MoCEMACalculator.sol",
+          "label": "bitcoinMovingAverage",
+          "astId": 2867,
+          "type": "t_uint256",
+          "src": "397:37:6"
+        },
+        {
+          "contract": "MoCEMACalculator",
+          "path": "contracts/MoCEMACalculator.sol",
+          "label": "smoothingFactor",
+          "astId": 2869,
+          "type": "t_uint256",
+          "src": "438:30:6"
+        },
+        {
+          "contract": "MoCEMACalculator",
+          "path": "contracts/MoCEMACalculator.sol",
+          "label": "lastEmaCalculation",
+          "astId": 2871,
+          "type": "t_uint256",
+          "src": "472:33:6"
+        },
+        {
+          "contract": "MoCEMACalculator",
+          "path": "contracts/MoCEMACalculator.sol",
+          "label": "emaCalculationBlockSpan",
+          "astId": 2873,
+          "type": "t_uint256",
+          "src": "509:38:6"
+        },
+        {
+          "contract": "MoCEMACalculator",
+          "path": "contracts/MoCEMACalculator.sol",
+          "label": "upgradeGap",
+          "astId": 3079,
+          "type": "t_array:50<t_uint256>",
+          "src": "3452:30:6"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "state",
+          "astId": 7914,
+          "type": "t_enum<MoCState.States>",
+          "src": "621:19:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "btcPriceProvider",
+          "astId": 7926,
+          "type": "t_address",
+          "src": "772:42:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "mocSettlement",
+          "astId": 7928,
+          "type": "t_address",
+          "src": "818:36:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "mocConverter",
+          "astId": 7930,
+          "type": "t_address",
+          "src": "858:34:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "docToken",
+          "astId": 7932,
+          "type": "t_address",
+          "src": "896:26:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "bproToken",
+          "astId": 7934,
+          "type": "t_address",
+          "src": "926:28:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "bproxManager",
+          "astId": 7936,
+          "type": "t_address",
+          "src": "958:37:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "dayBlockSpan",
+          "astId": 7938,
+          "type": "t_uint256",
+          "src": "1040:27:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "peg",
+          "astId": 7940,
+          "type": "t_uint256",
+          "src": "1108:18:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "bproMaxDiscountRate",
+          "astId": 7942,
+          "type": "t_uint256",
+          "src": "1216:34:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "liq",
+          "astId": 7944,
+          "type": "t_uint256",
+          "src": "1303:18:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "utpdu",
+          "astId": 7946,
+          "type": "t_uint256",
+          "src": "1381:20:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "rbtcInSystem",
+          "astId": 7948,
+          "type": "t_uint256",
+          "src": "1494:27:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "liquidationPrice",
+          "astId": 7950,
+          "type": "t_uint256",
+          "src": "1587:31:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "maxMintBPro",
+          "astId": 9273,
+          "type": "t_uint256",
+          "src": "19767:26:12"
+        },
+        {
+          "contract": "MoCState",
+          "path": "contracts/MoCState.sol",
+          "label": "upgradeGap",
+          "astId": 9329,
+          "type": "t_array:50<t_uint256>",
+          "src": "20727:30:12"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "MoCConnector": {
+      "address": "0x8D547c1A322C4fE727B9947a97903d4622Fd2b88",
+      "constructorCode": "608060405234801561001057600080fd5b506105cc806100206000396000f3fe",
+      "bodyBytecodeHash": "f6d3e3d1e095da6985e550b9ad327d01f60a45208bd2d261987bcb862dbbd707",
+      "localBytecodeHash": "8ab4be2aac088414148bd5d1c2e76684c318dddce8004668e8473b76c003a2d1",
+      "deployedBytecodeHash": "8ab4be2aac088414148bd5d1c2e76684c318dddce8004668e8473b76c003a2d1",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address_payable": {
+          "id": "t_address_payable",
+          "kind": "elementary",
+          "label": "address payable"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        }
+      },
+      "storage": [
+        {
+          "contract": "MoCWhitelist",
+          "path": "contracts/base/MoCWhitelist.sol",
+          "label": "whitelist",
+          "astId": 10449,
+          "type": "t_mapping<t_bool>",
+          "src": "115:34:18"
+        },
+        {
+          "contract": "MoCWhitelist",
+          "path": "contracts/base/MoCWhitelist.sol",
+          "label": "upgradeGap",
+          "astId": 10531,
+          "type": "t_array:50<t_uint256>",
+          "src": "1110:30:18"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 14730,
+          "type": "t_bool",
+          "src": "757:24:75"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 14732,
+          "type": "t_bool",
+          "src": "876:25:75"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 14788,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:75"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "moc",
+          "astId": 10303,
+          "type": "t_address_payable",
+          "src": "239:26:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "docToken",
+          "astId": 10305,
+          "type": "t_address",
+          "src": "269:23:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "bproToken",
+          "astId": 10307,
+          "type": "t_address",
+          "src": "296:24:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "bproxManager",
+          "astId": 10309,
+          "type": "t_address",
+          "src": "324:27:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "mocState",
+          "astId": 10311,
+          "type": "t_address",
+          "src": "355:23:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "mocConverter",
+          "astId": 10313,
+          "type": "t_address",
+          "src": "382:27:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "mocSettlement",
+          "astId": 10315,
+          "type": "t_address",
+          "src": "413:28:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "mocExchange",
+          "astId": 10317,
+          "type": "t_address",
+          "src": "445:26:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "mocInrate",
+          "astId": 10319,
+          "type": "t_address",
+          "src": "475:24:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "mocBurnout",
+          "astId": 10321,
+          "type": "t_address",
+          "src": "503:25:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "initialized",
+          "astId": 10323,
+          "type": "t_bool",
+          "src": "533:25:16"
+        },
+        {
+          "contract": "MoCConnector",
+          "path": "contracts/base/MoCConnector.sol",
+          "label": "upgradeGap",
+          "astId": 10433,
+          "type": "t_array:50<t_uint256>",
+          "src": "1602:30:16"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "MoCExchange": {
+      "address": "0x1c7D5BC5f584705F58b25732E6269f18d555866b",
+      "constructorCode": "608060405234801561001057600080fd5b50613c6d806100206000396000f3fe",
+      "bodyBytecodeHash": "cc0278fe4459db98ebe4cbf76851e0f8512ebb315bfde15e54090bd5c596378e",
+      "localBytecodeHash": "d2d16b2060fa91202011cb3f9f4219676107e88b31a11571f3c5596065ec846c",
+      "deployedBytecodeHash": "b87b9d14d167473213a5a52136212b844239f7622ddfe01f696fddd60ac67c70",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_struct<MoCHelperLib.MocLibConfig>": {
+          "id": "t_struct<MoCHelperLib.MocLibConfig>",
+          "kind": "struct",
+          "label": "MoCHelperLib.MocLibConfig",
+          "members": [
+            {
+              "label": "reservePrecision",
+              "astId": 4373,
+              "type": "t_uint256",
+              "src": "137:24:8"
+            },
+            {
+              "label": "dayPrecision",
+              "astId": 4375,
+              "type": "t_uint256",
+              "src": "167:20:8"
+            },
+            {
+              "label": "mocPrecision",
+              "astId": 4377,
+              "type": "t_uint256",
+              "src": "193:20:8"
+            }
+          ]
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 14730,
+          "type": "t_bool",
+          "src": "757:24:75"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 14732,
+          "type": "t_bool",
+          "src": "876:25:75"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 14788,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:75"
+        },
+        {
+          "contract": "MoCBase",
+          "path": "contracts/base/MoCBase.sol",
+          "label": "connector",
+          "astId": 10258,
+          "type": "t_address",
+          "src": "251:29:15"
+        },
+        {
+          "contract": "MoCBase",
+          "path": "contracts/base/MoCBase.sol",
+          "label": "initialized",
+          "astId": 10260,
+          "type": "t_bool",
+          "src": "285:25:15"
+        },
+        {
+          "contract": "MoCBase",
+          "path": "contracts/base/MoCBase.sol",
+          "label": "upgradeGap",
+          "astId": 10292,
+          "type": "t_array:50<t_uint256>",
+          "src": "696:30:15"
+        },
+        {
+          "contract": "MoCLibConnection",
+          "path": "contracts/MoCLibConnection.sol",
+          "label": "mocLibConfig",
+          "astId": 6854,
+          "type": "t_struct<MoCHelperLib.MocLibConfig>",
+          "src": "179:47:10"
+        },
+        {
+          "contract": "MoCLibConnection",
+          "path": "contracts/MoCLibConnection.sol",
+          "label": "upgradeGap",
+          "astId": 6902,
+          "type": "t_array:50<t_uint256>",
+          "src": "888:30:10"
+        },
+        {
+          "contract": "MoCExchange",
+          "path": "contracts/MoCExchange.sol",
+          "label": "mocState",
+          "astId": 3209,
+          "type": "t_address",
+          "src": "1726:26:7"
+        },
+        {
+          "contract": "MoCExchange",
+          "path": "contracts/MoCExchange.sol",
+          "label": "mocConverter",
+          "astId": 3211,
+          "type": "t_address",
+          "src": "1756:34:7"
+        },
+        {
+          "contract": "MoCExchange",
+          "path": "contracts/MoCExchange.sol",
+          "label": "bproxManager",
+          "astId": 3213,
+          "type": "t_address",
+          "src": "1794:37:7"
+        },
+        {
+          "contract": "MoCExchange",
+          "path": "contracts/MoCExchange.sol",
+          "label": "bproToken",
+          "astId": 3215,
+          "type": "t_address",
+          "src": "1835:28:7"
+        },
+        {
+          "contract": "MoCExchange",
+          "path": "contracts/MoCExchange.sol",
+          "label": "docToken",
+          "astId": 3217,
+          "type": "t_address",
+          "src": "1867:26:7"
+        },
+        {
+          "contract": "MoCExchange",
+          "path": "contracts/MoCExchange.sol",
+          "label": "mocInrate",
+          "astId": 3219,
+          "type": "t_address",
+          "src": "1897:28:7"
+        },
+        {
+          "contract": "MoCExchange",
+          "path": "contracts/MoCExchange.sol",
+          "label": "moc",
+          "astId": 3221,
+          "type": "t_address",
+          "src": "1929:16:7"
+        },
+        {
+          "contract": "MoCExchange",
+          "path": "contracts/MoCExchange.sol",
+          "label": "upgradeGap",
+          "astId": 4367,
+          "type": "t_array:50<t_uint256>",
+          "src": "18355:30:7"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "MoCBProxManager": {
+      "address": "0x0c852c833BeC7Ccf2E3a32060FFD07a4e6d701F1",
+      "constructorCode": "608060405234801561001057600080fd5b506120cd806100206000396000f3fe",
+      "bodyBytecodeHash": "3d15db481c8ad50fc90d9a9c215d1b1bc2dab86d52d6bf3262970701a8ed360c",
+      "localBytecodeHash": "ae6a94603f81df385276920041097fd58f5911df12e25f2a3f16924ead6ab2c0",
+      "deployedBytecodeHash": "ae6a94603f81df385276920041097fd58f5911df12e25f2a3f16924ead6ab2c0",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_struct<MoCBucketContainer.MoCBucket>": {
+          "id": "t_struct<MoCBucketContainer.MoCBucket>",
+          "kind": "struct",
+          "label": "MoCBucketContainer.MoCBucket",
+          "members": [
+            {
+              "label": "name",
+              "astId": 1604,
+              "type": "t_bytes32",
+              "src": "532:12:3"
+            },
+            {
+              "label": "isBase",
+              "astId": 1606,
+              "type": "t_bool",
+              "src": "550:11:3"
+            },
+            {
+              "label": "nDoc",
+              "astId": 1608,
+              "type": "t_uint256",
+              "src": "567:12:3"
+            },
+            {
+              "label": "nBPro",
+              "astId": 1610,
+              "type": "t_uint256",
+              "src": "585:13:3"
+            },
+            {
+              "label": "nBTC",
+              "astId": 1612,
+              "type": "t_uint256",
+              "src": "604:12:3"
+            },
+            {
+              "label": "cobj",
+              "astId": 1614,
+              "type": "t_uint256",
+              "src": "622:12:3"
+            },
+            {
+              "label": "bproxBalances",
+              "astId": 1618,
+              "type": "t_mapping<t_struct<MoCBucketContainer.BProxBalance>>",
+              "src": "680:46:3"
+            },
+            {
+              "label": "activeBalances",
+              "astId": 1621,
+              "type": "t_array:dyn<t_address_payable>",
+              "src": "732:32:3"
+            },
+            {
+              "label": "activeBalancesLength",
+              "astId": 1623,
+              "type": "t_uint256",
+              "src": "770:28:3"
+            },
+            {
+              "label": "inrateBag",
+              "astId": 1625,
+              "type": "t_uint256",
+              "src": "852:17:3"
+            },
+            {
+              "label": "available",
+              "astId": 1627,
+              "type": "t_bool",
+              "src": "875:14:3"
+            }
+          ]
+        },
+        "t_bytes32": {
+          "id": "t_bytes32",
+          "kind": "elementary",
+          "label": "bytes32"
+        },
+        "t_struct<MoCBucketContainer.BProxBalance>": {
+          "id": "t_struct<MoCBucketContainer.BProxBalance>",
+          "kind": "struct",
+          "label": "MoCBucketContainer.BProxBalance",
+          "members": [
+            {
+              "label": "value",
+              "astId": 1599,
+              "type": "t_uint256",
+              "src": "424:13:3"
+            },
+            {
+              "label": "index",
+              "astId": 1601,
+              "type": "t_uint256",
+              "src": "443:10:3"
+            }
+          ]
+        },
+        "t_mapping<t_struct<MoCBucketContainer.BProxBalance>>": {
+          "id": "t_mapping<t_struct<MoCBucketContainer.BProxBalance>>",
+          "valueType": "t_struct<MoCBucketContainer.BProxBalance>",
+          "label": "mapping(key => MoCBucketContainer.BProxBalance)",
+          "kind": "mapping"
+        },
+        "t_address_payable": {
+          "id": "t_address_payable",
+          "kind": "elementary",
+          "label": "address payable"
+        },
+        "t_array:dyn<t_address_payable>": {
+          "id": "t_array:dyn<t_address_payable>",
+          "valueType": "t_address_payable",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address payable[]"
+        },
+        "t_mapping<t_struct<MoCBucketContainer.MoCBucket>>": {
+          "id": "t_mapping<t_struct<MoCBucketContainer.MoCBucket>>",
+          "valueType": "t_struct<MoCBucketContainer.MoCBucket>",
+          "label": "mapping(key => MoCBucketContainer.MoCBucket)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 14730,
+          "type": "t_bool",
+          "src": "757:24:75"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 14732,
+          "type": "t_bool",
+          "src": "876:25:75"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 14788,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:75"
+        },
+        {
+          "contract": "MoCBase",
+          "path": "contracts/base/MoCBase.sol",
+          "label": "connector",
+          "astId": 10258,
+          "type": "t_address",
+          "src": "251:29:15"
+        },
+        {
+          "contract": "MoCBase",
+          "path": "contracts/base/MoCBase.sol",
+          "label": "initialized",
+          "astId": 10260,
+          "type": "t_bool",
+          "src": "285:25:15"
+        },
+        {
+          "contract": "MoCBase",
+          "path": "contracts/base/MoCBase.sol",
+          "label": "upgradeGap",
+          "astId": 10292,
+          "type": "t_array:50<t_uint256>",
+          "src": "696:30:15"
+        },
+        {
+          "contract": "Governed",
+          "path": "moc-governance/contracts/Governance/Governed.sol",
+          "label": "governor",
+          "astId": 12722,
+          "type": "t_address",
+          "src": "549:25:55"
+        },
+        {
+          "contract": "Governed",
+          "path": "moc-governance/contracts/Governance/Governed.sol",
+          "label": "upgradeGap",
+          "astId": 12766,
+          "type": "t_array:50<t_uint256>",
+          "src": "1698:30:55"
+        },
+        {
+          "contract": "MoCBucketContainer",
+          "path": "contracts/MoCBucketContainer.sol",
+          "label": "mocBuckets",
+          "astId": 1660,
+          "type": "t_mapping<t_struct<MoCBucketContainer.MoCBucket>>",
+          "src": "1213:49:3"
+        },
+        {
+          "contract": "MoCBucketContainer",
+          "path": "contracts/MoCBucketContainer.sol",
+          "label": "upgradeGap",
+          "astId": 2315,
+          "type": "t_array:50<t_uint256>",
+          "src": "9158:30:3"
+        },
+        {
+          "contract": "MoCBProxManager",
+          "path": "contracts/MoCBProxManager.sol",
+          "label": "upgradeGap",
+          "astId": 1579,
+          "type": "t_array:50<t_uint256>",
+          "src": "5095:30:2"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {
+    "MoCHelperLib": {
+      "address": "0xC50e6d4fCbe518b7c584D07621Ae5DAd5C4d567A",
+      "constructorCode": "6114d7610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe",
+      "bodyBytecodeHash": "369547c2b1844a808cc4d9c469bb5d1954f76ffa7082bc9442c09e5ac794f1d5",
+      "localBytecodeHash": "32153c67db553136fe7296f0079475e18034aff3d58ebb9ed2a3647db856f454",
+      "deployedBytecodeHash": "32153c67db553136fe7296f0079475e18034aff3d58ebb9ed2a3647db856f454"
+    }
+  },
+  "proxies": {},
+  "manifestVersion": "2.2",
+  "version": "0.1.3"
+}

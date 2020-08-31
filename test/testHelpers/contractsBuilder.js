@@ -1,4 +1,5 @@
-const { TestHelper } = require('zos');
+const { TestHelper } = require('@openzeppelin/cli');
+// const { Contracts, ZWeb3 } = require('@openzeppelin/upgrades');
 const { Contracts, ZWeb3 } = require('zos-lib');
 
 ZWeb3.initialize(web3.currentProvider);
